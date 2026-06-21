@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>mk体育 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #0b1120 0%, #1a2332 100%);
+      color: #e9edf2;
+      padding: 3.2rem 1.8rem 2.8rem;
+      text-align: center;
+      border-bottom: 4px solid #3b82f6;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0.6rem auto 0;
+      opacity: 0.85;
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 2.4rem 1.5rem 3.2rem;
+    }
+
+    /* 目录感网格布局 */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.6rem;
+    }
+
+    @media (min-width: 640px) {
+      .guide-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .guide-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.8rem 1.4rem 1.6rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 0 0 1px #eef2f6;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px #d0d9e3;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #e2e8f0;
+      color: #0f172a;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card li {
+      padding: 0.3rem 0;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .card li::before {
+      content: "· ";
+      color: #3b82f6;
+      font-weight: 600;
+    }
+
+    .intro-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 1.8rem;
+      margin-bottom: 2.4rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 0 0 1px #eef2f6;
+    }
+
+    .intro-section h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #0b1120;
+    }
+
+    .intro-section p {
+      margin-bottom: 0.9rem;
+      color: #1e293b;
+    }
+
+    .highlight-link {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px dotted #94a3b8;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .highlight-link:hover {
+      color: #1d4ed8;
+      border-bottom-color: #2563eb;
+    }
+
+    .reminder-box {
+      background: #f0f4fe;
+      border-left: 5px solid #3b82f6;
+      padding: 1.4rem 1.6rem;
+      border-radius: 14px;
+      margin: 2rem 0 1.8rem;
+    }
+
+    .reminder-box p {
+      margin: 0.4rem 0;
+    }
+
+    .reminder-box strong {
+      color: #1e3a5f;
+    }
+
+    .faq-preview {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 1.6rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 0 0 1px #eef2f6;
+      margin-top: 1.8rem;
+    }
+
+    .faq-preview h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid #e9edf2;
+      padding-bottom: 0.9rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #1e293b;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid #dce2ea;
+      color: #5f6c80;
+      font-size: 0.85rem;
+    }
+
+    .footer-note a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .container {
+        padding: 1.6rem 0.8rem;
+      }
+      .intro-section, .faq-preview {
+        padding: 1.4rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>mk体育 · 简明指南</h1>
+    <p>关于浏览、理解与日常使用的几点备忘，供你参考。</p>
+  </header>
+
+  <main class="container">
+
+    <!-- 目录感网格：四个功能卡片 -->
+    <div class="guide-grid">
+      <div class="card">
+        <h3>常用路径</h3>
+        <ul>
+          <li>赛事日程与结果</li>
+          <li>球队与选手资料</li>
+          <li>新闻与数据更新</li>
+          <li>社区讨论区入口</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>功能说明</h3>
+        <ul>
+          <li>实时比分模块</li>
+          <li>统计分析与图表</li>
+          <li>个人收藏夹</li>
+          <li>通知偏好设置</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>使用场景</h3>
+        <ul>
+          <li>赛前信息查阅</li>
+          <li>赛后数据回顾</li>
+          <li>多赛事横向对比</li>
+          <li>移动端快速浏览</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>问答摘要</h3>
+        <ul>
+          <li>如何查找历史赛果？</li>
+          <li>数据多久更新一次？</li>
+          <li>是否支持多语言？</li>
+          <li>怎样联系管理员？</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 介绍与说明区 -->
+    <section class="intro-section">
+      <h2>关于 mk体育</h2>
+      <p>
+        这是一个面向体育爱好者的信息平台，聚合了多个运动项目的赛程、数据、资讯与社区内容。
+        你可以在 <a href="https://main-webs-mksport.com" class="highlight-link">mk体育</a> 找到从足球、篮球到网球、电竞的实时动态，
+        以及每场比赛后的技术统计与战报。平台的设计初衷是让体育数据更易读、更直观，
+        同时保持信息更新速度与准确度。
+      </p>
+      <p>
+        界面以模块化卡片组织内容，你可以按运动种类、联赛或日期筛选信息。
+        无论是深度数据分析还是快速浏览比分，都能找到适合的入口。
+        另外，个人账户支持收藏赛事、自定义关注列表，方便你追踪自己感兴趣的队伍与选手。
+      </p>
+    </section>
+
+    <!-- 提示区：访问提醒与使用建议 -->
+    <div class="reminder-box">
+      <strong>💡 几点提醒</strong>
+      <p>· 建议使用现代浏览器（Chrome / Edge / Safari 最新版本）获得最佳显示效果。</p>
+      <p>· 部分数据图表依赖 JavaScript，请确保浏览器未禁用脚本。</p>
+      <p>· 如遇到页面加载缓慢，可尝试清理缓存或检查网络连接。</p>
+      <p>· 社区内容由用户生成，不代表平台立场，请注意信息甄别。</p>
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 -->
+    <section class="faq-preview">
+      <h3>常见问题 · 快速查看</h3>
+
+      <div class="faq-item">
+        <span class="faq-q">Q: 数据来源是什么？</span>
+        <span class="faq-a">主要来自官方数据接口与公开赛事信息，部分统计由合作方提供。</span>
+      </div>
+
+      <div class="faq-item">
+        <span class="faq-q">Q: 是否可以在移动端使用？</span>
+        <span class="faq-a">页面采用响应式设计，可以在手机和平板上正常浏览，推荐使用横屏查看数据表格。</span>
+      </div>
+
+      <div class="faq-item">
+        <span class="faq-q">Q: 怎样反馈问题或建议？</span>
+        <span class="faq-a">每个页面底部均有反馈入口，也可通过帮助中心提交工单，通常在 1 个工作日内回复。</span>
+      </div>
+
+      <div class="faq-item">
+        <span class="faq-q">Q: 是否需要注册才能浏览？</span>
+        <span class="faq-a">大部分内容对访客开放，部分个性化功能（如收藏、通知）需要免费注册账户。</span>
+      </div>
+    </section>
+
+    <!-- 底部信息区 -->
+    <div class="footer-note">
+      <p>内容仅供参考，请以实际页面展示为准。</p>
+      <p>访问 <a href="https://main-webs-mksport.com" class="highlight-link">mk体育</a> 获取最新赛事信息。</p>
+    </div>
+
+  </main>
+
+</body>
+</html>
