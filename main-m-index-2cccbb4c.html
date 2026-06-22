@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>关于 leisu —— 站点简述与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f1f8f7;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2d2b;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 28px rgba(0, 60, 50, 0.08);
+            border: 1px solid rgba(70, 150, 140, 0.15);
+        }
+
+        /* hero 区域 */
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: #c9e5df;
+            color: #1a5c54;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #0b3e3a;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            border-left: 4px solid #2e8b7a;
+            padding-left: 1rem;
+        }
+
+        .intro-paragraph {
+            font-size: 1.05rem;
+            color: #1f3d39;
+            background: #e2f2ee;
+            padding: 1.2rem 1.5rem;
+            border-radius: 1.2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #bcd9d2;
+        }
+
+        .intro-paragraph strong {
+            color: #13584d;
+        }
+
+        /* 承接段落 */
+        .bridging-text {
+            margin: 1.8rem 0 2rem 0;
+            font-size: 1rem;
+            padding: 0 0.2rem;
+        }
+
+        .bridging-text a {
+            color: #1e7a6a;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(46, 139, 122, 0.35);
+            transition: border-color 0.2s;
+        }
+
+        .bridging-text a:hover {
+            border-bottom-color: #0f5448;
+        }
+
+        /* 网格卡片 —— 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 1.2rem;
+            margin: 1.8rem 0 2.2rem 0;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 1.3rem 1.2rem;
+            box-shadow: 0 3px 12px rgba(0, 40, 35, 0.04);
+            border: 1px solid #d4e7e2;
+            transition: all 0.15s;
+        }
+
+        .feature-card:hover {
+            border-color: #2e8b7a;
+            box-shadow: 0 6px 14px rgba(30, 122, 106, 0.08);
+            background: #fafffe;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0d4f45;
+            margin-bottom: 0.55rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .feature-card h3::before {
+            content: "▹";
+            color: #2e8b7a;
+            font-weight: 400;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #34524c;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* 温和结尾区域 */
+        .closing-note {
+            margin-top: 2rem;
+            padding: 1.5rem 1.8rem;
+            background: #dceee9;
+            border-radius: 1.5rem;
+            border-left: 5px solid #267a6a;
+            font-size: 0.95rem;
+            color: #133b35;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.1rem;
+        }
+
+        .closing-note a {
+            color: #0d5f52;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #48998a;
+            transition: border-color 0.15s;
+        }
+
+        .closing-note a:hover {
+            border-bottom-color: #0c423a;
+            color: #083d34;
+        }
+
+        .small-meta {
+            font-size: 0.75rem;
+            color: #4b7a70;
+            margin-top: 2.5rem;
+            text-align: center;
+            opacity: 0.75;
+        }
+
+        /* 移动端精细 */
+        @media (max-width: 520px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+            .container {
+                padding: 1.8rem 1rem;
+                border-radius: 1.5rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+            .intro-paragraph {
+                padding: 1rem 1rem;
+                font-size: 0.98rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .closing-note {
+                padding: 1.2rem 1rem;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <span class="hero-tag">✦ 导航 · 可信说明</span>
+
+    <h1>leisu · 信息锚点</h1>
+
+    <div class="intro-paragraph">
+        <strong>leisu</strong> 并不只是一组字母 —— 它是用于标识、聚合与校验内容来源的站点名称。  
+        在信息碎片化时代，一个稳定、可回溯的定位符号比以往更重要。  
+        本站以可验证的方式提供原始参照，帮助使用者建立清晰的内容坐标系。
+    </div>
+
+    <!-- 承接段落 + 链接自然嵌入 -->
+    <div class="bridging-text">
+        若需直接访问站点根目录，可以通过 <a href="https://main-m-leisu.com">leisu</a> 进入内容索引。  
+        该地址作为长期固定的入口，保持结构简洁，不附加追踪参数或跳转中介。
+    </div>
+
+    <!-- 特点卡片网格 -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>结构透明</h3>
+            <p>目录层级经过梳理，资源与说明页彼此独立，减少冗余跳转。</p>
+        </div>
+        <div class="feature-card">
+            <h3>低信噪比</h3>
+            <p>不放置横幅广告、弹窗或自动播放媒体，阅读体验受控。</p>
+        </div>
+        <div class="feature-card">
+            <h3>引用优先</h3>
+            <p>内容多以短文、清单或注释形式呈现，便于快速定位关键信息。</p>
+        </div>
+        <div class="feature-card">
+            <h3>静态部署</h3>
+            <p>基于 GitHub Pages，版本可追溯；页面变动均保留提交记录。</p>
+        </div>
+        <div class="feature-card">
+            <h3>适配终端</h3>
+            <p>响应式布局覆盖手机至宽屏，字体与间距针对阅读优化。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾，再次嵌入链接，但句子不同 -->
+    <div class="closing-note">
+        <span>👋 如果你倾向于了解更完整的背景，可以从</span>
+        <a href="https://main-m-leisu.com">leisu</a>
+        <span>出发，浏览站点目前的公开内容。没有复杂的注册流程，也无需关注账号；页面所承载的就是全部。</span>
+        <span style="display:inline-block; margin-top: 0.5rem; width:100%;">—— 保持可读，保持可核验。</span>
+    </div>
+
+    <!-- 极简占位，无实质引导 -->
+    <div class="small-meta">
+        <span>✦ 页面生成基于特定种子结构 · 内容方向更新于最近</span>
+    </div>
+
+    <!-- 注意：未显示创作种子，仅用于变化逻辑 -->
+</div>
+
+</body>
+</html>
