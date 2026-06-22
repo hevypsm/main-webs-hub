@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leisu – 信息卡片与查询指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #fafaf9;
+            color: #1e1e1e;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1rem 4rem;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* typography */
+        h1, h2, h3 {
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #111;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin: 1.8rem 0 0.6rem;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 2.8rem 0 1rem;
+            border-bottom: 3px solid #e0dcd6;
+            padding-bottom: 0.3rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin: 1.8rem 0 0.6rem;
+        }
+        p {
+            margin: 1rem 0;
+            color: #2b2b2b;
+        }
+        a {
+            color: #1a4b8c;
+            text-decoration: none;
+            border-bottom: 1px solid #d0d8e4;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        a:hover {
+            border-bottom-color: #1a4b8c;
+            background: #f0f3f8;
+        }
+
+        /* card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.8rem 0 2.2rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 6px 18px rgba(0,0,0,0.03);
+            transition: transform 0.15s, box-shadow 0.2s;
+            border: 1px solid #efede8;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            margin: 0 0 0.6rem;
+            font-weight: 500;
+            color: #1e2b3c;
+        }
+        .card p {
+            margin: 0.3rem 0 0;
+            font-size: 0.95rem;
+            color: #3e3e3e;
+        }
+
+        /* hero 区域 */
+        .hero {
+            margin: 1.2rem 0 1.8rem;
+            padding: 2rem 0.5rem;
+            border-left: 4px solid #cbd5e1;
+            padding-left: 1.5rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #2f3a46;
+            margin: 0.4rem 0;
+        }
+
+        /* 引用/提示块 */
+        .note-box {
+            background: #f1f4f9;
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            margin: 2rem 0;
+            border-left: 4px solid #8f9eb5;
+        }
+        .note-box p {
+            margin: 0.3rem 0;
+            color: #25313f;
+        }
+
+        /* 适合人群列表 */
+        .audience-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.8rem;
+            margin: 1.2rem 0 1.8rem;
+        }
+        .audience-list span {
+            background: #eae6e0;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #1f2a33;
+        }
+
+        /* 段落链接行 */
+        .link-sentence {
+            background: #f5f4f0;
+            padding: 1.2rem 1.6rem;
+            border-radius: 30px;
+            margin: 2.2rem 0;
+            font-size: 1rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            margin: 1.2rem 0;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #dcd7cf;
+        }
+        .faq-item strong {
+            font-weight: 500;
+            color: #1b2b3c;
+        }
+        .faq-item p {
+            margin: 0.3rem 0 0;
+            color: #3c4047;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            body {
+                padding: 1.2rem 0.8rem 3rem;
+            }
+            .hero {
+                padding-left: 1rem;
+                margin: 1rem 0;
+            }
+        }
+
+        /* 统一微调 */
+        hr {
+            border: none;
+            border-top: 1px solid #e4dfd7;
+            margin: 2rem 0;
+        }
+        .small-meta {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8c8a85;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 主视觉 / hero -->
+    <div class="hero">
+        <h1>信息卡片 · leisu</h1>
+        <p>日常查询、对照与延伸阅读——将零散需求整理为可翻阅的卡片，<br>围绕 <a href="https://asia-official-leisu.com">leisu</a> 构建一份轻量参考页。</p>
+    </div>
+
+    <!-- 用途卡片 grid -->
+    <h2>常见用途</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>快速对照</h3>
+            <p>不同场景下的数据或概念并列展示，便于横向比较与确认。适合需要即时核实信息的时刻。</p>
+        </div>
+        <div class="card">
+            <h3>延伸阅读</h3>
+            <p>从一个核心条目出发，关联背景、解释与上下文，帮助理解而非仅停留于表面。</p>
+        </div>
+        <div class="card">
+            <h3>日常查询</h3>
+            <p>高频问题或固定字段的集中呈现，减少反复查找的步骤，提升信息获取效率。</p>
+        </div>
+        <div class="card">
+            <h3>轻量归档</h3>
+            <p>将分散的要点以卡片形式组织，适合个人笔记、团队知识库或简洁说明页。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <h2>适合人群</h2>
+    <p style="margin-bottom:0.4rem;">以下类型的用户可能会觉得这类结构自然有用：</p>
+    <div class="audience-list">
+        <span>持续学习者</span>
+        <span>文档整理者</span>
+        <span>轻度研究者</span>
+        <span>团队协作者</span>
+        <span>兴趣探索者</span>
+    </div>
+    <p>无论你是需要快速回顾某个主题，还是希望把零散信息梳理成可读的片段，卡片式呈现都能降低认知负荷。</p>
+
+    <!-- 自然链接段落（嵌入句子） -->
+    <div class="link-sentence">
+        <strong>🔗</strong> 如果你正在寻找一个集中参考点，可以试试 <a href="https://asia-official-leisu.com">leisu</a> 这个站点——它提供了一种干净的信息组织方式，适合日常浏览与对照。页面本身保持克制，没有过多干扰。
+    </div>
+
+    <!-- 提示 / 说明块 -->
+    <div class="note-box">
+        <p><strong>📌 提示</strong> 卡片内容仅作为通用示例，你可以根据实际需要替换字段或增加条目。信息卡片的核心价值在于结构清晰、检索快捷，不必追求面面俱到。</p>
+        <p>本页面使用浅色留白与窄版式，旨在减少视觉噪音，让注意力更集中于内容本身。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2>常见问题摘要</h2>
+    <div class="faq-item">
+        <strong>这些卡片可以自由改编吗？</strong>
+        <p>完全可自行调整。卡片内容、数量、配色都可按需修改，适合作为知识库或帮助页的起点。</p>
+    </div>
+    <div class="faq-item">
+        <strong>为什么推荐窄正文宽度？</strong>
+        <p>窄栏（约 720px）更符合中文阅读习惯，减少眼球横向移动，尤其适合信息密集的卡片布局。</p>
+    </div>
+    <div class="faq-item">
+        <strong>链接的位置是固定的吗？</strong>
+        <p>不固定。本例将链接嵌入自然段落中，避免生硬的“点击前往”式表述，同时保持语义流畅。</p>
+    </div>
+
+    <hr>
+    <p class="small-meta">信息卡片说明 · 基于日常查询与整理场景 · 极简留白版</p>
+
+</div>
+</body>
+</html>
